@@ -32,7 +32,6 @@ def delete_hit_count_handler(sender, instance, save_hitcount=False, **kwargs):
         instance.hitcount.decrease()
 
 
-@python_2_unicode_compatible
 class HitCount(models.Model):
     """
     Model that stores the hit totals for any content object.
@@ -95,7 +94,6 @@ class HitCount(models.Model):
     #     pass
 
 
-@python_2_unicode_compatible
 class Hit(models.Model):
     """
     Model captures a single Hit by a visitor.
@@ -155,7 +153,6 @@ class Hit(models.Model):
         super(Hit, self).delete()
 
 
-@python_2_unicode_compatible
 class BlacklistIP(models.Model):
 
     ip = models.CharField(max_length=40, unique=True)
@@ -169,7 +166,6 @@ class BlacklistIP(models.Model):
         return '%s' % self.ip
 
 
-@python_2_unicode_compatible
 class BlacklistUserAgent(models.Model):
 
     user_agent = models.CharField(max_length=255, unique=True)
